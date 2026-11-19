@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Refugios y Paradas · Vicente López</title>
+  <link rel="icon" href="img/flor-mvl.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="css/mvl.css">
+  <link rel="stylesheet" href="css/refugios.css">
+</head>
+<body>
+  <header class="encabezado">
+    <img class="logo" src="img/logo-mvl-negro.png" alt="Vivamos Vicente López">
+    <h1 class="mvl-titular">Refugios <span class="regular">y Paradas</span></h1>
+    <div class="contador"><strong id="nVisibles">0</strong> <span>de <span id="nTotal">0</span> paradas</span></div>
+  </header>
+  <div class="mvl-franja"></div>
+
+  <section class="filtros" aria-label="Filtros">
+    <label class="campo">
+      <span>Barrio</span>
+      <select id="fBarrio"><option value="">Todos los barrios</option></select>
+    </label>
+    <label class="campo campo-ancho">
+      <span>Calle</span>
+      <input id="fCalle" type="search" list="listaCalles" placeholder="Buscar calle…" autocomplete="off">
+      <datalist id="listaCalles"></datalist>
+    </label>
+    <label class="campo">
+      <span>Tipo de refugio</span>
+      <select id="fTipo"><option value="">Todos los tipos</option></select>
+    </label>
+    <label class="campo">
+      <span>Tipología</span>
+      <select id="fTipologia"><option value="">Todas</option></select>
+    </label>
+    <button id="btnLimpiar" class="btn btn-claro" type="button">Limpiar</button>
+    <button id="btnCsv" class="btn" type="button">Descargar CSV</button>
+  </section>
+
+  <main class="contenido">
+    <div class="mapa-wrap">
+      <div id="map" aria-label="Mapa satelital de refugios y paradas de colectivos"></div>
+      <div class="leyenda mvl-card" id="leyenda"></div>
+    </div>
+
+    <div class="tabla-wrap">
+      <table class="tabla" id="tabla">
+        <thead><tr></tr></thead>
+        <tbody></tbody>
+      </table>
+      <p class="sin-resultados" id="sinResultados" hidden>No hay paradas que coincidan con los filtros.</p>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="datos/refugios.js"></script>
+  <script src="js/refugios.js"></script>
+</body>
+</html>

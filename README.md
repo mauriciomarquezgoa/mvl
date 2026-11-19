@@ -19,3 +19,12 @@ tabla de datos y filtros por barrio y efector.
 - Abrir `salud-efectores/index.html` en el navegador (funciona sin servidor).
 - Datos: base `mvl`, `salud.salud_efectores_kml`, exportados a `salud-efectores/datos/efectores.js`
   (EPSG:32721 → EPSG:4326). Si la tabla cambia, hay que volver a exportarla.
+
+## Refugios y Paradas
+
+[`refugios-paradas/`](refugios-paradas/) — mapa satelital (Esri) con los refugios y paradas de colectivos,
+tabla de datos y filtros por barrio, calle, tipo de refugio y tipología.
+
+- Abrir `refugios-paradas/index.html` en el navegador (funciona sin servidor).
+- Datos: base `mvl`, `calculos3.refugios_paradas_27032026`, exportados a `refugios-paradas/datos/refugios.js`
+  (EPSG:32721 → EPSG:4326). Si la tabla cambia, hay que volver a exportarla.
