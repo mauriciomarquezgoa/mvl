@@ -1,0 +1,106 @@
+/* ==========================================================
+   MVL · Marca Vicente López — estilos base para salidas web
+   Fuente: Brandbook Vicente López v2.0
+   ========================================================== */
+
+/* Tipografía de marca: Brandon Grotesque (licencia comercial).
+   Si tienen los archivos web (.woff2), colocarlos en /fonts y
+   descomentar este bloque. Mientras tanto se usa "Outfit" como
+   reemplazo geométrico similar. */
+/*
+@font-face { font-family: "Brandon Grotesque"; src: url("../fonts/BrandonGrotesque-Light.woff2") format("woff2"); font-weight: 300; }
+@font-face { font-family: "Brandon Grotesque"; src: url("../fonts/BrandonGrotesque-Regular.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "Brandon Grotesque"; src: url("../fonts/BrandonGrotesque-Bold.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Brandon Grotesque"; src: url("../fonts/BrandonGrotesque-Black.woff2") format("woff2"); font-weight: 900; }
+*/
+
+:root {
+  /* Paleta principal (6 colores) */
+  --mvl-azul: #0096C2;
+  --mvl-verde-oscuro: #01662A;
+  --mvl-verde: #038C2A;
+  --mvl-verde-lima: #98CE17;
+  --mvl-violeta: #5F1F7B;
+  --mvl-magenta: #97077D;
+
+  /* Complementarios (solo ilustraciones / uso menor) */
+  --mvl-azul-noche: #132C7A;
+  --mvl-azul-claro: #596FFF;
+  --mvl-lavanda: #ABABD4;
+  --mvl-lavanda-claro: #D1D0EE;
+  --mvl-durazno: #FFAA82;
+
+  /* Neutros de interfaz */
+  --mvl-oscuro: #333333;
+  --mvl-gris: #EAEAEA;
+  --mvl-blanco: #FFFFFF;
+
+  --mvl-font: "Brandon Grotesque", "Outfit", "Segoe UI", system-ui, sans-serif;
+  --mvl-radius: 14px;
+
+  /* Franja de marca: magenta · violeta · lima · verde · azul */
+  --mvl-franja: linear-gradient(90deg,
+      var(--mvl-magenta) 0 20%, var(--mvl-violeta) 20% 40%,
+      var(--mvl-verde-lima) 40% 60%, var(--mvl-verde) 60% 80%,
+      var(--mvl-azul) 80% 100%);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: var(--mvl-font);
+  color: var(--mvl-oscuro);
+  background: var(--mvl-blanco);
+}
+
+/* Titulares: siempre MAYÚSCULAS, Black, interlínea 1/1, interletra 0, centrados */
+.mvl-titular {
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0;
+  text-align: center;
+  margin: 0;
+}
+.mvl-titular .regular { font-weight: 400; }
+
+/* Bajadas: Regular, mayúsculas, interlínea 1/1 */
+.mvl-bajada {
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0;
+  text-align: center;
+  margin: 0;
+}
+
+/* Franja de colores de marca */
+.mvl-franja { height: 6px; background: var(--mvl-franja); }
+
+/* Etiqueta tipo "píldora" (ej. SERVICIOS DISPONIBLES) */
+.mvl-pill {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: var(--mvl-magenta);
+  color: var(--mvl-blanco);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* Tarjeta blanca con franja inferior */
+.mvl-card {
+  background: var(--mvl-blanco);
+  border-radius: var(--mvl-radius);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .18);
+  overflow: hidden;
+}
+.mvl-card::after {
+  content: "";
+  display: block;
+  height: 6px;
+  background: var(--mvl-franja);
+}
